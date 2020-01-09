@@ -20,11 +20,6 @@ for line in fh:
     whole_num = line[start_num:]
     print(whole_num)
     total  += float(whole_num)
-    #print(total)
-    #print(whole_num)
     count += 1
-    #avg = total / count
-    #print(float(avg))
-    #print(line)
 avg = total / count
 print("Average spam confidence:", avg)
