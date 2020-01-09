@@ -10,13 +10,21 @@ Average spam confidence: 0.750718518519  '''
 
 # Use the file name mbox-short.txt as the file name
 count = 0
+avg = 0
+total = 0
 fname = input("Enter file name: ")
 fh = open(fname)
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:") : continue
-    a_num = line.find('0')
-    all_num = line[a_num:]
-    print(all_num)
+    start_num = line.find('0')
+    whole_num = line[start_num:]
+    print(whole_num)
+    total  += float(whole_num)
+    #print(total)
+    #print(whole_num)
     count += 1
+    #avg = total / count
+    #print(float(avg))
     #print(line)
-print("Done")
+avg = total / count
+print("Average spam confidence:", avg)
